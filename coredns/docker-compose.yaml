@@ -1,4 +1,4 @@
-version: '2.1'
+version: "3"
 
 services:
   coredns:
@@ -9,4 +9,11 @@ services:
       - 192.168.1.194:53:53/udp
     volumes:
       - ./config:/root/coredns/config/
-
+  nginx:
+    image: nginx:1.23.3 #-alpine-slim
+    command: [nginx-debug, '-g', 'daemon off;']
+    restart: always
+    ports:
+      - 192.168.1.194:80:80
+    volumes:
+      - ./nginx-config:/etc/nginx/conf.d
