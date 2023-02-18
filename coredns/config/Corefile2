@@ -1,0 +1,7 @@
+coredns.test {
+    whoami
+}
+
+. {
+    forward . 192.168.1.1
+}
