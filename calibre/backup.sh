@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-cp -r './config/Calibre Library' '/mnt/nuc_backup'
+rsync -avz './config/Calibre Library' '/mnt/nuc_backup'

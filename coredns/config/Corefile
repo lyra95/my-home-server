@@ -1,17 +1,17 @@
 coredns.test {
-    log
-    errors
-    whoami
+	log
+	errors
+	whoami
 }
 
-calibre.jo.net {
-    hosts {
-	192.168.1.194 calibre.jo.net
-    }
-    log
-    errors
+jo.homeserver.net {
+	hosts {
+		192.168.1.194 jo.homeserver.net
+	}
+	log
+	errors
 }
 
 . {
-    forward . 192.168.1.1
+	forward . 192.168.1.1
 }
