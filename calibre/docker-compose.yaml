@@ -16,7 +16,6 @@ services:
       - 18080:8080 # desktop gui
       - 18081:8081 # webserver gui
       - 19090:9090 # wireless
-    restart: unless-stopped
   calibre-web:
     image: lscr.io/linuxserver/calibre-web:amd64-version-0.6.19
     container_name: calibre-web
@@ -31,4 +30,3 @@ services:
       - "./config/Calibre Library:/books"
     ports:
       - 80:8083
-    restart: unless-stopped
