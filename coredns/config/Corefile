@@ -1,17 +1,12 @@
-coredns.test {
-	log
-	errors
-	whoami
-}
-
 jo.homeserver.net {
 	hosts {
 		192.168.1.194 jo.homeserver.net
 	}
-	log
-	errors
 }
 
 . {
-	forward . 192.168.1.1
+	reload 10s
+	forward . 192.168.1.194:38053
+	log
+	errors
 }

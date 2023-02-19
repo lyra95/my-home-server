@@ -1,4 +1,4 @@
-version: '2.1'
+version: '3'
 
 services:
   coredns:
@@ -11,9 +11,23 @@ services:
       - ./config:/root/coredns/config/
   nginx:
     image: nginx:1.23.3
-    command: [nginx-debug, '-g', 'daemon off;']
     ports:
       - 192.168.1.194:80:80
     volumes:
       - ./nginx-config:/etc/nginx/conf.d
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    ports:
+      - "192.168.1.194:38053:53/tcp"
+      - "192.168.1.194:38053:53/udp"
+      - "192.168.1.194:38080:80/tcp"
+    environment:
+      TZ: 'Asia/Seoul'
+      WEBPASSWORD: '1234' # 'set a secure password here or it will be random'
+    # Volumes store your data between container upgrades
+    volumes:
+      - './etc-pihole:/etc/pihole'
+      - './etc-dnsmasq.d:/etc/dnsmasq.d'
+    restart: unless-stopped
 
