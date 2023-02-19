@@ -9,6 +9,7 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Asia/Seoul
+      - SUBFOLDER=/desktop-calibre/
       #- FILE__PASSWORD=/home/jo/apps/calibre/secrets/password
     volumes:
       - ./config:/config
@@ -29,4 +30,4 @@ services:
       - ./config:/config
       - "./config/Calibre Library:/books"
     ports:
-      - 80:8083
+      - 18083:8083

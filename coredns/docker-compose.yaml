@@ -9,11 +9,11 @@ services:
       - 192.168.1.194:53:53/udp
     volumes:
       - ./config:/root/coredns/config/
-        #  nginx:
-        #image: nginx:1.23.3
-        #    command: [nginx-debug, '-g', 'daemon off;']
-        #    ports:
-        #     - 192.168.1.194:12345:80
-        #    volumes:
-        #      - ./nginx-config:/etc/nginx/conf.d
+  nginx:
+    image: nginx:1.23.3
+    command: [nginx-debug, '-g', 'daemon off;']
+    ports:
+      - 192.168.1.194:80:80
+    volumes:
+      - ./nginx-config:/etc/nginx/conf.d
 
