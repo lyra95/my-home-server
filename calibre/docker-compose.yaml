@@ -1,7 +1,7 @@
-version: "2.1"
+version: "3"
 services:
   calibre:
-    image: lscr.io/linuxserver/calibre:6.12.0
+    image: lscr.io/linuxserver/calibre:6.13.0
     container_name: calibre
     security_opt:
       - seccomp:unconfined #optional
@@ -9,7 +9,6 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Asia/Seoul
-      - SUBFOLDER=/desktop-calibre/
       #- FILE__PASSWORD=/home/jo/apps/calibre/secrets/password
     volumes:
       - ./config:/config
