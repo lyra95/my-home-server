@@ -3,6 +3,7 @@ jo.me {
 	hosts {
 		192.168.1.194 calibre.jo.me
 		192.168.1.194 desktop.jo.me
+		192.168.1.194 content.jo.me
 		192.168.1.194 pihole.jo.me
 		reload 10s
 	}
